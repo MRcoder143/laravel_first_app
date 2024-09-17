@@ -5,6 +5,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CommentController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -13,12 +15,12 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::controller(PostController::class)->group(function(){
-// Route::get("/post/{id}",[PostController::class,'showPost'])->name('post');
-Route::get("/post",'showPost')->name('post');
-Route::get("/blog",'showBlog')->name('blog');
+// Route::controller(PostController::class)->group(function(){
+// // Route::get("/post/{id}",[PostController::class,'showPost'])->name('post');
+// Route::get("/post",'showPost')->name('post');
+// Route::get("/blog",'showBlog')->name('blog');
 
-});
+// });
 
 Route::get("test",TestController::class);
 
@@ -36,6 +38,14 @@ Route::get('/delete/{id}','deleteUser')->name('deleteUser');
 Route::view('adduser','/addUser');
 
 Route::get('/allStudents',[StudentController::class,'showStudents'])->name('students');
+
+
+
+// customer resource routes
+
+Route::resource('customers',CustomerController::class);
+Route::resource('posts',PostController::class);
+Route::resource('posts.comments',CommentController::class)->shallow();
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),

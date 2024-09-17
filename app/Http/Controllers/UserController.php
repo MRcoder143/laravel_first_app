@@ -26,30 +26,6 @@ class UserController extends Controller
    }
 
    public function addUser(UserRequest $req){
-     // $req->validate([
-     //      'username' => ['required','string','max:255'],
-     //      'useremail' => ['required','string','email','max:255','unique:users,email'],
-     //      'userpass' => ['required','string','min:8'],
-     //      'userconfirmpass' => ['required','string','min:8','same:userpass'],
-     //      'usercity' => ['required','string','max:255'],
-     //      'useraddress' => ['required','string','max:255']
-     // ],
-     // [
-     //      'username.required' => 'Username is required',
-     //      'username.string' => 'Username must be a string',
-     //      'username.max' => 'Username should not exceed 255 characters',
-     //      'useremail.required' => 'Email is required',
-     //      'useremail.string' => 'Email must be a string',
-     //      'useremail.email' => 'Email must be a valid email',
-     //      'useremail.max' => 'Email should not exceed 255 characters',
-     //      'useremail.unique' => 'Email already exists',
-     //      'userpass.required' => 'Password is required',
-     //      'userpass.string' => 'Password must be a string',
-     //      'userpass.min' => 'Password must be at least 8 characters',
-     //      'userconfirmpass.required' => 'Confirm Password is required',
-     //      'userconfirmpass.string' => 'Confirm Password must be a string' 
-     // ]
-     // );
      $user = DB::table('users')->insert(
           [
                'name' => $req->username,
