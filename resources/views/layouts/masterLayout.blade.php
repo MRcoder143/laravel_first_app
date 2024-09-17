@@ -18,16 +18,16 @@
   <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="{{URL::asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('vendor/quill/quill.snow.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('vendor/simple-datatables/style.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -44,8 +44,8 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="{{asset('/')}}" class="logo d-flex align-items-center">
-        <img src="{{asset('img/logo.png')}}" alt="">
+      <a href="{{URL::asset('/')}}" class="logo d-flex align-items-center">
+        <img src="{{URL::asset('img/logo.png')}}" alt="">
         <span class="d-none d-lg-block">NiceAdmin</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -71,7 +71,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="{{URL::asset('img/profile-img.jpg')}}" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -197,10 +197,10 @@
     <section class="section dashboard">
     @hasSection ('content')
     @yield('content')
-       
     @else
         <h2>no content found</h2>
     @endif
+    
     </section>
 
   </main><!-- End #main -->
@@ -222,17 +222,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{{asset('vendor/apexcharts/apexcharts.min.js')}}"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/chart.js/chart.umd.js"></script>
-  <script src="vendor/echarts/echarts.min.js"></script>
-  <script src="vendor/quill/quill.min.js"></script>
-  <script src="vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="vendor/tinymce/tinymce.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
+  <script src="{{URL::asset('vendor/apexcharts/apexcharts.min.js')}}"></script>
+  <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{URL::asset('vendor/chart.js/chart.umd.js')}}"></script>
+  <script src="{{URL::asset('vendor/echarts/echarts.min.js')}}"></script>
+  <script src="{{URL::asset('vendor/quill/quill.min.js')}}"></script>
+  <script src="{{URL::asset('vendor/simple-datatables/simple-datatables.js')}}"></script>
+  <script src="{{URL::asset('vendor/tinymce/tinymce.min.js')}}"></script>
+  <script src="{{URL::asset('vendor/php-email-form/validate.js')}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="js/main.js"></script>
+  <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>

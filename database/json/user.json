@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Talha",
+        "email": "talha@gmail.com",
+        "password": "talha123",
+        "password_confirmation": "talha123",
+        "city": "Gujrat",
+        "address": "Gujrat Main"
+    },
+    {
+        "name": "Ashraf",
+        "email": "Ashraf@gmail.com",
+        "password": "Ashraf123",
+        "password_confirmation": "Ashraf123",
+        "city": "Kharian",
+        "address": "kharian Main"
+    },
+    {
+        "name": "Ali",
+        "email": "Ali@gmail.com",
+        "password": "Ali123",
+        "password_confirmation": "Ali123",
+        "city": "Lalamusa",
+        "address": "Lalamusa Main"
+    },
+    {
+        "name": "Hamza",
+        "email": "Hamza@gmail.com",
+        "password": "Hamza123",
+        "password_confirmation": "Hamza123",
+        "city": "Kotla",
+        "address": "Kotla Main"
+    }
+]

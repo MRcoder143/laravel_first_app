@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -10,9 +13,29 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+Route::controller(PostController::class)->group(function(){
+// Route::get("/post/{id}",[PostController::class,'showPost'])->name('post');
+Route::get("/post",'showPost')->name('post');
+Route::get("/blog",'showBlog')->name('blog');
 
+});
 
+Route::get("test",TestController::class);
 
+Route::controller(UserController::class)->group(function(){
+Route::get('/allUsers','showUsers')->name('users');
+Route::get('/user/{id}','singleUser')->name('singleUser');
+Route::post('/add','addUser')->name('addnewuser');
+// Route::put('/update/{id}','updateUser')->name('updateUser');
+Route::post('/update/{id}','updateUser')->name('updateUser');
+Route::get('/updateUserForm/{id}','updateUserForm')->name('updateuserform');
+Route::get('/delete/{id}','deleteUser')->name('deleteUser');
+
+});
+// Route::get('/',[UserController::class,'showUsers']);
+Route::view('adduser','/addUser');
+
+Route::get('/allStudents',[StudentController::class,'showStudents'])->name('students');
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
