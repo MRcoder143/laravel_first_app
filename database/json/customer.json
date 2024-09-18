@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Talha",
+        "email": "talha@gmail.com",
+        "phone": "000098876",
+        "address": "Gujrat main",
+        "city": "Gujrat"
+    },
+    {
+        "name": "Moeez",
+        "email": "moeez@gmail.com",
+        "phone": "765786778",
+        "address": "Lalamusa main",
+        "city": "Lalamusa"
+    },
+    {
+        "name": "Akbar",
+        "email": "akbar@gmail.com",
+        "phone": "54766987",
+        "address": "Kharian",
+        "city": "Kharian"
+    },
+    {
+        "name": "Aslam",
+        "email": "aslam@gmail.com",
+        "phone": "765786890",
+        "address": "Gujranwala",
+        "city": "Gujranwala"
+    }
+]

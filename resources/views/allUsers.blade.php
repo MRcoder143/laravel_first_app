@@ -3,7 +3,7 @@
 
 @section('content')
 
-<h1>All user List</h1>
+<h1>All user List Using Query builder</h1>
 
     <div class="container">
         <a href="/adduser" class="btn btn-primary mb-2">Add</a>

@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\CommentController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -43,9 +43,10 @@ Route::get('/allStudents',[StudentController::class,'showStudents'])->name('stud
 
 // customer resource routes
 
+// Route::resource('customers',CustomerController::class);
 Route::resource('customers',CustomerController::class);
-Route::resource('posts',PostController::class);
-Route::resource('posts.comments',CommentController::class)->shallow();
+// Route::resource('posts',PostController::class);
+// Route::resource('posts.comments',CommentController::class)->shallow();
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
