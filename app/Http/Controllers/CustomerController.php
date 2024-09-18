@@ -12,7 +12,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-      $customers =  Customer::all();
+      $customers =  Customer::paginate(10);
       return view('customers.allCustomers',compact('customers'));
     //   return $customers;
     }
@@ -60,9 +60,9 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $customerId)
+    public function show(Customer $customer)
     {
-        $cus = Customer::find($customerId);
+        $cus = Customer::find($customer->customer_id);
         return view('customers.viewCustomer',compact('cus'));
     }
 
@@ -71,7 +71,8 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        return view('customers.editCustomer');
+        $customer = Customer::find($customer->customer_id);
+        return view('customers.editCustomer',compact('customer'));
     }
 
     /**
@@ -79,7 +80,26 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        // method 1
+        // $customer = Customer::find($customer->id);
+        // $customer->name = $request->cname;
+        // $customer->email = $request->cemail;
+        // $customer->phone = $request->cphone;
+        // $customer->address = $request->caddress;
+        // $customer->city = $request->ccity;
+
+        // $customer->save();
+
+        // method 2
+            Customer::where('id', $customer->customer_id)
+            ->update([
+                'name' => $request->cname,
+                'email' => $request->cemail,
+                'phone' => $request->cphone,
+                'address' => $request->caddress
+                ]);
+
+        return redirect()->route('customers.index')->with('status','Customer Updated Successfully');
     }
 
     /**
@@ -87,6 +107,14 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        // method 1
+        // $customer = Customer::find($customer->id);
+        // $customer->delete();
+
+        // method 2
+        Customer::destroy($customer->custoemr_id);
+
+        return redirect()->route('customers.index')->with('status','Customer Deleted Successfully');
+  
     }
 }
